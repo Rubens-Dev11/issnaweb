@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-foreground: var(--brand-blue-foreground);
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-foreground: var(--brand-green-foreground);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-orange-foreground: var(--brand-orange-foreground);
+  --color-surface-alt: var(--surface-alt);
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --shadow-card: 0 2px 8px -2px oklch(0.2 0.05 260 / 0.08), 0 4px 16px -4px oklch(0.2 0.05 260 / 0.06);
+  --shadow-card-hover: 0 8px 24px -4px oklch(0.2 0.05 260 / 0.12), 0 4px 12px -2px oklch(0.2 0.05 260 / 0.08);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand palette — ISSNA */
+  --brand-blue: oklch(0.36 0.16 263);        /* #1a3a8f */
+  --brand-blue-foreground: oklch(1 0 0);
+  --brand-green: oklch(0.56 0.14 148);       /* #2d8a4e */
+  --brand-green-foreground: oklch(1 0 0);
+  --brand-orange: oklch(0.66 0.19 47);       /* #e8620a */
+  --brand-orange-foreground: oklch(1 0 0);
+  --surface-alt: oklch(0.97 0.005 250);      /* #f5f7fa */
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.2 0.03 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.03 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.03 260);
+  --primary: var(--brand-blue);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.97 0.005 250);
+  --secondary-foreground: var(--brand-blue);
+  --muted: oklch(0.97 0.005 250);
+  --muted-foreground: oklch(0.5 0.02 260);
+  --accent: var(--brand-orange);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.01 255);
+  --input: oklch(0.92 0.01 255);
+  --ring: var(--brand-blue);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--brand-blue);
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shadow-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shadow-card:hover {
+  transform: translateY(-4px);
+}
