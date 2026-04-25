@@ -16,4 +16,7 @@ export default defineConfig({
     },
     dedupe: ["react", "react-dom", "@tanstack/react-router"],
   },
+  build: {
+    outDir: ".output",
+  },
 });
