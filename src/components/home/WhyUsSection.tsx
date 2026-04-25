@@ -1,5 +1,5 @@
 import { ShieldCheck, Briefcase, GraduationCap, MapPin, Quote } from "lucide-react";
-import campus from "@/assets/campus.jpg";
+import labo from "@/assets/labo.png";
 
 const reasons = [
   { icon: ShieldCheck, title: "École autorisée par l'État", desc: "Arrêté officiel MINESUP, diplômes reconnus." },
@@ -43,8 +43,8 @@ export function WhyUsSection() {
           {/* Right — image + quote */}
           <div className="relative">
             <img
-              src={campus}
-              alt="Campus ISSNA à Douala"
+              src={labo}
+              alt="Laboratoire ISSNA à Douala"
               loading="lazy"
               width={1280}
               height={1280}

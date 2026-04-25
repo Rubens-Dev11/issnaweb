@@ -6,6 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Breadcrumb } from "@/components/Breadcrumb";
+import soutenance from "@/assets/soutenance2024.png";
+import sout1 from "@/assets/sout1.png";
+import act3 from "@/assets/activit3.png";
+import act4 from "@/assets/activit4.png";
+import act5 from "@/assets/activit5.png";
+import labo from "@/assets/labo.png";
 
 export const Route = createFileRoute("/actualites")({
   head: () => ({
@@ -29,7 +35,7 @@ const ARTICLES = [
     category: "Événements",
     date: "15 Avril 2026",
     author: "Administration",
-    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800&auto=format&fit=crop"
+    image: soutenance
   },
   {
     id: 2,
@@ -38,7 +44,7 @@ const ARTICLES = [
     category: "Campus",
     date: "10 Avril 2026",
     author: "Direction",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop"
+    image: sout1
   },
   {
     id: 3,
@@ -47,7 +53,7 @@ const ARTICLES = [
     category: "Formations",
     date: "05 Avril 2026",
     author: "Pédagogie",
-    image: "https://images.unsplash.com/photo-1581056399312-603014334593?q=80&w=800&auto=format&fit=crop"
+    image: act3
   },
   {
     id: 4,
@@ -56,7 +62,7 @@ const ARTICLES = [
     category: "Événements",
     date: "28 Mars 2026",
     author: "Communication",
-    image: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=800&auto=format&fit=crop"
+    image: act4
   },
   {
     id: 5,
@@ -65,7 +71,7 @@ const ARTICLES = [
     category: "Vie étudiante",
     date: "20 Mars 2026",
     author: "Prof. Sonfack",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop"
+    image: act5
   },
   {
     id: 6,
@@ -74,7 +80,7 @@ const ARTICLES = [
     category: "Campus",
     date: "12 Mars 2026",
     author: "Direction",
-    image: "https://images.unsplash.com/photo-1581093458791-9f3c3250bb8b?q=80&w=800&auto=format&fit=crop"
+    image: labo
   }
 ];
 

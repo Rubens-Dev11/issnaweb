@@ -1,5 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar } from "lucide-react";
+import act0 from "@/assets/activit0.png";
+import act1 from "@/assets/activit1.png";
+import act2 from "@/assets/activit2.png";
 
 const news = [
   {
@@ -8,7 +11,7 @@ const news = [
     date: "15 Sept. 2024",
     category: "Campus",
     categoryColor: "bg-brand-blue/10 text-brand-blue",
-    gradient: "from-brand-blue to-brand-green",
+    image: act0,
   },
   {
     title: "Journée portes ouvertes : venez découvrir l'ISSNA",
@@ -16,7 +19,7 @@ const news = [
     date: "3 Oct. 2024",
     category: "Événements",
     categoryColor: "bg-brand-orange/10 text-brand-orange",
-    gradient: "from-brand-orange to-brand-blue",
+    image: act1,
   },
   {
     title: "Nos étudiants en stage au CHU de Douala",
@@ -24,7 +27,7 @@ const news = [
     date: "20 Nov. 2024",
     category: "Vie étudiante",
     categoryColor: "bg-brand-green/10 text-brand-green",
-    gradient: "from-brand-green to-brand-orange",
+    image: act2,
   },
 ];
 
@@ -42,7 +45,12 @@ export function NewsSection() {
               key={n.title}
               className="reveal bg-card rounded-xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-all duration-200 hover:-translate-y-1 border border-border/60 flex flex-col"
             >
-              <div className={`h-44 bg-gradient-to-br ${n.gradient} relative`}>
+              <div className="h-44 relative overflow-hidden">
+                <img 
+                  src={n.image} 
+                  alt={n.title} 
+                  className="w-full h-full object-cover"
+                />
                 <span className={`absolute top-4 left-4 ${n.categoryColor} bg-white/95 text-xs font-semibold px-3 py-1 rounded-full`}>
                   {n.category}
                 </span>

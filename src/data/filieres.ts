@@ -8,6 +8,12 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+import act0 from "@/assets/activit0.png";
+import act1 from "@/assets/activit1.png";
+import act2 from "@/assets/activit2.png";
+import act3 from "@/assets/activit3.png";
+import act4 from "@/assets/activit4.png";
+
 export type Cycle = "BTS" | "HND" | "Licence Pro" | "Master Pro";
 
 export type Formation = {
@@ -31,6 +37,7 @@ export type Filiere = {
   slug: string;
   name: string;
   icon: LucideIcon;
+  image: string;
   shortDesc: string;
   longDesc: string;
   color: string; // tailwind color token name (brand-blue / brand-green / brand-orange)
@@ -257,31 +264,31 @@ export const formations: Formation[] = [
 
 export const filieres: Filiere[] = [
   {
-    slug: "genie-biologique", name: "Génie Biologique", icon: FlaskConical, color: "brand-blue",
+    slug: "genie-biologique", name: "Génie Biologique", icon: FlaskConical, color: "brand-blue", image: act0,
     shortDesc: "Analyses biologiques, diététique, agroalimentaire et biotechnologie.",
     longDesc: "La filière Génie Biologique forme des professionnels capables d'intervenir dans les laboratoires d'analyses, l'industrie agroalimentaire, la nutrition et la recherche biotechnologique. Une voie d'avenir pour les sciences du vivant.",
     formationSlugs: ["analyses-biologiques", "dietetique", "industrie-alimentaire", "biotechnologie-agricole"],
   },
   {
-    slug: "agriculture-elevage", name: "Agriculture et Élevage", icon: Sprout, color: "brand-green",
+    slug: "agriculture-elevage", name: "Agriculture et Élevage", icon: Sprout, color: "brand-green", image: act1,
     shortDesc: "Production animale, végétale et entrepreneuriat agropastoral.",
     longDesc: "L'agriculture est l'un des piliers du développement africain. Cette filière forme des techniciens et entrepreneurs capables de moderniser la production et de bâtir des exploitations rentables.",
     formationSlugs: ["production-animale", "production-vegetale", "entrepreneuriat-agropastoral"],
   },
   {
-    slug: "etudes-medico-sanitaires", name: "Études Médico-sanitaires", icon: Stethoscope, color: "brand-orange",
+    slug: "etudes-medico-sanitaires", name: "Études Médico-sanitaires", icon: Stethoscope, color: "brand-orange", image: act2,
     shortDesc: "Sciences infirmières, sage-femme, kinésithérapie, optique.",
-    longDesc: "Au cœur des besoins de santé du Cameroun et de l'Afrique, cette filière prépare aux métiers paramédicaux les plus recherchés, avec un fort accent sur la pratique clinique.",
+    longDesc: "Au cœur des besoins de santé du Cameroun et de l'Afrique, cette filière prépare aux métiers paramédicaux les plus recherchés, with un fort accent sur la pratique clinique.",
     formationSlugs: ["sciences-infirmieres", "sage-femme", "kinesitherapie", "opticien-lunetier"],
   },
   {
-    slug: "sciences-techniques-biomedicales", name: "Sciences et Techniques Biomédicales", icon: Microscope, color: "brand-blue",
+    slug: "sciences-techniques-biomedicales", name: "Sciences et Techniques Biomédicales", icon: Microscope, color: "brand-blue", image: act3,
     shortDesc: "Laboratoire biomédical et techniques pharmaceutiques.",
     longDesc: "Le diagnostic médical et le médicament sont au cœur des soins. Cette filière vous donne les compétences techniques pour exercer en laboratoire ou dans la chaîne pharmaceutique.",
     formationSlugs: ["techniques-laboratoire-biomedical", "techniques-pharmaceutiques"],
   },
   {
-    slug: "economie-sociale-familiale", name: "Économie Sociale et Familiale", icon: HeartHandshake, color: "brand-green",
+    slug: "economie-sociale-familiale", name: "Économie Sociale et Familiale", icon: HeartHandshake, color: "brand-green", image: act4,
     shortDesc: "Puériculture et gérontologie.",
     longDesc: "Une filière dédiée à l'accompagnement humain, des plus jeunes aux plus âgés, avec une demande croissante en Afrique et à l'international.",
     formationSlugs: ["puericulture", "gerontologie"],

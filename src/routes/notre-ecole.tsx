@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Target, Eye, Heart, Award, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Breadcrumb } from "@/components/Breadcrumb";
+import directeur from "@/assets/directeur.png";
+import campus1 from "@/assets/campus.jpg";
+import campus2 from "@/assets/camps.png";
 
 export const Route = createFileRoute("/notre-ecole")({
   head: () => ({
@@ -94,12 +97,14 @@ function NotreEcolePage() {
       <section className="reveal py-20 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-5xl mx-auto bg-card border border-border rounded-3xl overflow-hidden shadow-card flex flex-col md:flex-row">
-            <div className="md:w-1/3 bg-secondary flex items-center justify-center py-12">
-              <Avatar className="w-32 h-32 border-4 border-white shadow-md">
-                <AvatarFallback className="bg-brand-blue text-white text-3xl font-bold">DG</AvatarFallback>
-              </Avatar>
+            <div className="md:w-2/5 relative min-h-[400px] bg-secondary">
+              <img 
+                src={directeur} 
+                alt="Directeur Général ISSNA" 
+                className="absolute inset-0 w-full h-full object-cover object-top" 
+              />
             </div>
-            <div className="md:w-2/3 p-8 md:p-12">
+            <div className="md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
               <h2 className="text-2xl font-bold mb-6">Mot du Directeur</h2>
               <blockquote className="text-lg text-muted-foreground italic mb-6 leading-relaxed">
                 "L'ISSNA a été fondé avec la conviction que la formation de qualité est le premier levier du développement. Dans un contexte où les besoins en professionnels de santé et en agronomes qualifiés n'ont jamais été aussi importants, nous nous sommes engagés à offrir une formation rigoureuse, pratique et directement connectée aux réalités du terrain camerounais. Rejoindre l'ISSNA, c'est choisir un avenir solide."
@@ -140,24 +145,32 @@ function NotreEcolePage() {
           <h2 className="text-3xl font-bold text-center mb-12">Nos 2 campus à Douala</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="overflow-hidden border-none shadow-card hover:shadow-card-hover transition-all group">
-              <div className="h-48 bg-secondary flex items-center justify-center relative overflow-hidden">
-                <MapPin className="w-12 h-12 text-brand-blue/20 group-hover:scale-110 transition-transform duration-300" />
+              <div className="h-64 bg-secondary flex items-center justify-center relative overflow-hidden">
+                <img 
+                  src={campus1} 
+                  alt="Campus Ndogbong-Zatchmann" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
                 <div className="absolute inset-0 bg-brand-blue/5" />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-2">Campus Ndogbong-Zatchmann</h3>
-                <p className="text-muted-foreground">Douala, Cameroun</p>
+                <p className="text-muted-foreground">Douala, Cameroun — Situé à proximité de l'école publique de Ndogbong.</p>
               </CardContent>
             </Card>
 
             <Card className="overflow-hidden border-none shadow-card hover:shadow-card-hover transition-all group">
-              <div className="h-48 bg-secondary flex items-center justify-center relative overflow-hidden">
-                <MapPin className="w-12 h-12 text-brand-blue/20 group-hover:scale-110 transition-transform duration-300" />
+              <div className="h-64 bg-secondary flex items-center justify-center relative overflow-hidden">
+                <img 
+                  src={campus2} 
+                  alt="Campus Ndogbong-Citadelle" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
                 <div className="absolute inset-0 bg-brand-blue/5" />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-2">Campus Ndogbong-Citadelle</h3>
-                <p className="text-muted-foreground">Douala, Cameroun</p>
+                <p className="text-muted-foreground">Douala, Cameroun — Notre second campus moderne et accessible.</p>
               </CardContent>
             </Card>
           </div>

@@ -43,10 +43,18 @@ function FilieresPage() {
                   key={f.slug}
                   className="bg-card rounded-2xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-shadow border border-border/60"
                 >
-                  <div className="grid md:grid-cols-[200px_1fr] gap-0">
+                  <div className="grid md:grid-cols-[240px_1fr] gap-0">
                     {/* Visual */}
-                    <div className={`h-40 md:h-full bg-${f.color} flex items-center justify-center text-white`}>
-                      <Icon className="h-20 w-20 opacity-90" />
+                    <div className="h-48 md:h-full relative overflow-hidden group">
+                      <img 
+                        src={f.image} 
+                        alt={f.name} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className={`absolute inset-0 bg-${f.color}/20 mix-blend-multiply`} />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Icon className="h-16 w-16 text-white drop-shadow-lg opacity-90" />
+                      </div>
                     </div>
                     {/* Content */}
                     <div className="p-7">
