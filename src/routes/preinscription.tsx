@@ -19,14 +19,6 @@ import { filieres, formations } from "@/data/filieres";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const Route = createFileRoute("/preinscription")({
-  head: () => ({
-    meta: [
-      { title: "Préinscription en ligne | ISSNA Douala" },
-      { name: "description", content: "Remplissez votre dossier de préinscription à l'ISSNA en moins de 5 minutes. Formations BTS et HND en santé et sciences du vivant à Douala." },
-      { property: "og:title", content: "Préinscription en ligne | ISSNA Douala" },
-      { property: "og:description", content: "Démarrez votre parcours en santé et nutrition à l'ISSNA." },
-    ],
-  }),
   component: PreinscriptionPage,
 });
 

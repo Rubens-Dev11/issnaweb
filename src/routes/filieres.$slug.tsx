@@ -11,14 +11,6 @@ export const Route = createFileRoute("/filieres/$slug")({
     if (!filiere) throw notFound();
     return { filiere };
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData?.filiere.name} — ISSNA` },
-      { name: "description", content: loaderData?.filiere.shortDesc },
-      { property: "og:title", content: `${loaderData?.filiere.name} — ISSNA` },
-      { property: "og:description", content: loaderData?.filiere.shortDesc },
-    ],
-  }),
   notFoundComponent: () => (
     <section className="container mx-auto px-4 py-20 text-center">
       <h1 className="text-3xl">Filière introuvable</h1>

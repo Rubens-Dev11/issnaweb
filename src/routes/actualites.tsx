@@ -14,14 +14,6 @@ import act5 from "@/assets/activit5.png";
 import labo from "@/assets/labo.png";
 
 export const Route = createFileRoute("/actualites")({
-  head: () => ({
-    meta: [
-      { title: "Actualités et Événements | ISSNA Douala" },
-      { name: "description", content: "Suivez les dernières actualités, événements et annonces de l'ISSNA. Vie étudiante, nouvelles formations et vie du campus." },
-      { property: "og:title", content: "Actualités et Événements | ISSNA" },
-      { property: "og:description", content: "Dernières actualités et événements de l'ISSNA à Douala." },
-    ],
-  }),
   component: ActualitesPage,
 });
 

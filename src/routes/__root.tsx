@@ -1,11 +1,8 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts, useLocation } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, useLocation } from "@tanstack/react-router";
 import { useEffect } from "react";
-import appCss from "../styles.css?url";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import logo from "@/assets/issna-logo.jpg";
-import { formations } from "@/data/filieres";
 
 function NotFoundComponent() {
   return (
@@ -29,76 +26,10 @@ function NotFoundComponent() {
   );
 }
 
-const schemaOrg = {
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "ISSNA — Institut Supérieur de Santé et de Nutrition Appliquée",
-  "url": "https://issna-douala.com",
-  "logo": "https://issna-douala.com/issna-logo.jpg",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Ndogbong",
-    "addressLocality": "Douala",
-    "addressCountry": "CM"
-  },
-  "telephone": "+237650403397",
-  "email": "ifpscid@gmail.com"
-};
-
-const coursesSchema = formations.map(f => ({
-  "@context": "https://schema.org",
-  "@type": "Course",
-  "name": f.name,
-  "description": f.description,
-  "provider": {
-    "@type": "EducationalOrganization",
-    "name": "ISSNA",
-    "sameAs": "https://issna-douala.com"
-  }
-}));
-
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ISSNA Douala | Institut Supérieur de Santé et de Nutrition Appliquée" },
-      { name: "description", content: "L'ISSNA forme des professionnels de santé, biologistes et agronomes à Douala. BTS, HND, Licence et Master. Autorisation MINESUP. Inscriptions ouvertes." },
-      { name: "author", content: "ISSNA" },
-      { property: "og:title", content: "ISSNA Douala | Institut Supérieur de Santé et de Nutrition Appliquée" },
-      { property: "og:description", content: "L'ISSNA forme des professionnels de santé, biologistes et agronomes à Douala. BTS, HND, Licence et Master." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: logo },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify([schemaOrg, ...coursesSchema]),
-      }
-    ]
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
 });
-
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="fr">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   const location = useLocation();
@@ -112,7 +43,6 @@ function RootComponent() {
       });
     }, { threshold: 0.1 });
 
-    // On utilise requestAnimationFrame pour s'assurer que le DOM est prêt après le changement de route
     const timer = setTimeout(() => {
       const reveals = document.querySelectorAll('.reveal');
       reveals.forEach(el => observer.observe(el));

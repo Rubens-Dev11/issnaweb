@@ -8,14 +8,6 @@ import campus1 from "@/assets/campus.jpg";
 import campus2 from "@/assets/camps.png";
 
 export const Route = createFileRoute("/notre-ecole")({
-  head: () => ({
-    meta: [
-      { title: "À propos de l'ISSNA | Notre École à Douala" },
-      { name: "description", content: "L'Institut Supérieur de Santé et de Nutrition Appliquée (ISSNA) forme les futurs professionnels de santé au Cameroun. Mission, vision et valeurs." },
-      { property: "og:title", content: "À propos de l'ISSNA | Notre École" },
-      { property: "og:description", content: "Découvrez notre mission, notre vision et nos valeurs." },
-    ],
-  }),
   component: NotreEcolePage,
 });
 

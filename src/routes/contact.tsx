@@ -16,14 +16,6 @@ import { toast } from "sonner";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contactez-nous | ISSNA Douala" },
-      { name: "description", content: "Contactez l'ISSNA à Douala : adresse, téléphone, email, horaires. Formulaire de renseignement et de partenariat." },
-      { property: "og:title", content: "Contactez-nous | ISSNA" },
-      { property: "og:description", content: "Contactez l'ISSNA à Douala." },
-    ],
-  }),
   component: ContactPage,
 });
 

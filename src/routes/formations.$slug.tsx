@@ -15,14 +15,6 @@ export const Route = createFileRoute("/formations/$slug")({
     if (!filiere) throw notFound();
     return { formation, filiere };
   },
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData?.formation.name} — ISSNA` },
-      { name: "description", content: loaderData?.formation.description },
-      { property: "og:title", content: `${loaderData?.formation.name} — ${loaderData?.formation.diplome}` },
-      { property: "og:description", content: loaderData?.formation.description },
-    ],
-  }),
   notFoundComponent: () => (
     <section className="container mx-auto px-4 py-20 text-center">
       <h1 className="text-3xl">Formation introuvable</h1>

@@ -5,14 +5,6 @@ import { filieres, getFormationsByFiliere } from "@/data/filieres";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const Route = createFileRoute("/filieres")({
-  head: () => ({
-    meta: [
-      { title: "Nos filières de formation | ISSNA Douala" },
-      { name: "description", content: "5 filières et 14 spécialités : Génie Biologique, Agriculture, Sciences Infirmières, Biomédical, Économie Sociale. Formez-vous à Douala avec l'ISSNA." },
-      { property: "og:title", content: "Nos filières de formation | ISSNA Douala" },
-      { property: "og:description", content: "Découvrez les 5 filières de formation de l'ISSNA à Douala." },
-    ],
-  }),
   component: FilieresPage,
 });
 
